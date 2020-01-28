@@ -1,0 +1,21 @@
+<div style="
+background-color:  rgb(249, 249, 249);
+width:auto;
+height:550px;">
+
+        <div class="container" >
+                <div class="col-md-12" >
+                    <div style=" margin-top: 100px;margin-left: 200px;">
+                      <div class="form-group" style="margin-top: 100px;">
+
+                            <input placeholder="E-mail ... " type="text" class="form-control" [(ngModel)]="headline">
+                          </div>
+
+                      <div class="form-group">
+                            <label for="task">Comments</label>
+                            <textarea class="form-control" rows="5" [(ngModel)]="taskdesc"></textarea>
+                          </div>
+
+                    <button style="margin-bottom: 100px;"  class="btn btn-default"  (click)="onSubmit()"> Send</button>
+        </div>
+</div>
