@@ -21,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
 import { CompaniesComponent } from './companies/companies.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -32,6 +33,7 @@ import { CompaniesComponent } from './companies/companies.component';
     AboutusComponent,
     ContactComponent,
     CompaniesComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
