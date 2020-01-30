@@ -7,17 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-component.component.css']
 })
 export class HomeComponentComponent implements OnInit {
-
   constructor() { }
+  ngOnInit() { }
 
-  
-  ngOnInit() {
-
-  }
-  
-
-  onSearch(){
+  onSearch() {
   //  this.route.navigate(['showProperites', this.PropertyType, this.locationText, this.buy, this.rent]);
   }
-
 }

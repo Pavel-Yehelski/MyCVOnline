@@ -1,3 +1,21 @@
+<div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation" *ngIf="authenticationService.userData | async">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['/profile']">Profile</a></li>
+   
+
+       
+<button (click)="signOut()" class="btn btn-primary" >Logout</button>
+        
+    </ul>
+</div>
+<section>
+    <router-outlet> </router-outlet>   
+    </section>
+    <!-- section overview end -->
+
+
+
+
 <!-- register-area -->
 <div class="register-area start">
     <div class="container">
@@ -94,9 +112,9 @@
                 </div>
 
             
-                    <button (click)="signOut()" class="btn btn-primary" *ngIf="authenticationService.userData | async">Logout</button>
-                    </div>
-                
+
+
+            
                
                     <!-- </div> -->
                 </div>

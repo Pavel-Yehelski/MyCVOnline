@@ -1,42 +1,46 @@
-<div *ngIf="auth.user$ | async; then authenticated else guest">
-    <!-- template will replace this div -->
-</div>
 
-<!-- User NOT logged in -->
-<ng-template #guest>
-<h3>Howdy, GUEST</h3>
-<p>Login to get started...</p>
-
-<button (click)="auth.googleSignin()">
-    <i class="fa fa-google"></i> Connect Google
-</button>
-
-</ng-template>
-
-
-<!-- User logged in -->
-<ng-template #authenticated>
-<div *ngIf="auth.user$ | async as user">
-    <h3>Howdy, {{ user.displayName }}</h3>
-    <img  [src]="user.photoURL">
-    <p>UID: {{ user.uid }}</p>
-    <button (click)="auth.signOut()">Logout</button>
-    <!-- <a class="login_btn"  [routerLink]="['/profile']">Profile</a>
-    <router-outlet></router-outlet>   -->
-</div>
-</ng-template>
-
-
-      
      
 
 
-<!-- <a class="login_btn" [routerLink]="['/register']">Login</a>
 
-<li><a [routerLink]="['/contact']">Contact us</a></li>
-          <button routerLink="/profile">
-            <fa [name]="'address-card'" size=1></fa>
-            <span>Profile</span>
-          </button> -->
-    
-      
+
+    <section class="section-menu">
+    	<div class="navbar navbar-default main-nav" role="navigation" >
+    		<div class="container" >
+    			<div class="navbar-header">
+    				<button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse">
+    					<span class="sr-only"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    				</button>
+				
+					<a href="#" class="navbar-brand" >Profile</a>
+    			</div>  <!-- navbar-header end -->
+    			<!-- main nav  -->
+
+        <div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active" [routerLink]="['/home']"><a href="#home">Home </a></li>
+                <li><a [routerLink]="['/createcv']">Create CV</a></li>
+        <li><a [routerLink]="['/editecv']">Edite CV</a></li>
+        <li><a [routerLink]="['/createcompany']">Create Company</a></li>
+        <li><a [routerLink]="['/editecompany']">Edite Company</a></li>
+        <li><a [routerLink]="['/createjob']">Create Job</a></li>
+        <li><a [routerLink]="['/editejob']">Edite Job</a></li>
+                <a class="btn btn-defoult" [routerLink]="['/register']">Logout</a>
+                <button (click)="signOut()" class="btn btn-primary" *ngIf="authenticationService.userData | async">Logout</button>
+                
+            </ul>
+
+           
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</div>
+</section>
+<!-- section menu end -->
+
+<section>
+<router-outlet> </router-outlet>   
+</section>
+<!-- section overview end -->

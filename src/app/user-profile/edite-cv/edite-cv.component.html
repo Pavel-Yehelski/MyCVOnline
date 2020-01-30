@@ -1,0 +1,51 @@
+<div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="active" [routerLink]="['/profile']"><a href="#profile">Profile </a></li>
+        <li><a [routerLink]="['/createcv']">Create CV</a></li>
+        <li><a [routerLink]="['/editecv']">Edite CV</a></li>
+        <li><a [routerLink]="['/createcompany']">Create Company</a></li>
+        <li><a [routerLink]="['/editecompany']">Edite Company</a></li>
+        <li><a [routerLink]="['/createjob']">Create Job</a></li>
+        <li><a [routerLink]="['/editejob']">Edite Job</a></li>
+        <a class="btn btn-defoult" [routerLink]="['/register']">Logout</a>
+        <button (click)="signOut()" class="btn btn-primary" *ngIf="authenticationService.userData | async">Logout</button>
+        
+    </ul>
+
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Edit Information</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+          </div>
+      
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+          </div>
+      
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" formControlName="age" placeholder="age" name="age" class="form-control" id="age">
+          </div>
+    
+          <div class="form-group">
+            <label for="MainSkills">Main Skills:</label>
+            <input formControlName="MainSkills" placeholder="MainSkills" name="MainSkills" class="form-control" id="MainSkills">
+          </div>
+      
+          <div class="form-group">
+            <label for="WorkExpirience">Work Expirience:</label>
+            <input formControlName="WorkExpirience" placeholder="WorkExpirience" name="WorkExpirience" class="form-control" id="WorkExpirience">
+          </div>
+    
+          <div class="form-group">
+            <label for="education">Education:</label>
+            <input formControlName="education" placeholder="education" name="education" class="form-control" id="education">
+          </div>
+  
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>
+  

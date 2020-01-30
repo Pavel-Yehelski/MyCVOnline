@@ -1,0 +1,38 @@
+<div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="active" [routerLink]="['/profile']"><a href="#profile">Profile </a></li>
+        <li><a [routerLink]="['/createcv']">Create CV</a></li>
+        <li><a [routerLink]="['/editecv']">Edite CV</a></li>
+        <li><a [routerLink]="['/createcompany']">Create Company</a></li>
+        <li><a [routerLink]="['/editecompany']">Edite Company</a></li>
+        <li><a [routerLink]="['/createjob']">Create Job</a></li>
+        <li><a [routerLink]="['/editejob']">Edite Job</a></li>
+        <a class="btn btn-defoult" [routerLink]="['/register']">Logout</a>
+        <button (click)="signOut()" class="btn btn-primary" *ngIf="authenticationService.userData | async">Logout</button>
+        
+    </ul>
+
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Create Company</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  
+
+  
+      <div class="form-group">
+        <label for="CompanyName">Company Name:</label>
+        <input formControlName="CompanyName" placeholder="Company Name" name="CompanyName" class="form-control" id="CompanyName">
+      </div>
+  
+      <div class="form-group">
+        <label for="CompanyDescription">Company Description:</label>
+        <input formControlName="CompanyDescription" placeholder="Company Description" name="CompanyDescription" class="form-control" id="CompanyDescription">
+      </div>
+  
+      <div class="form-group">
+        <label for="City">City:</label>
+        <input formControlName="City" placeholder="City" name="City" class="form-control" id="City">
+      </div>
+
+      <button class="btn btn-success">Add</button>
+    </form>
+  </div>
